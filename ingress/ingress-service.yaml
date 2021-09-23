@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  type: NodePort
+  ports:
+  - name: httpd
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+  - name: gw-rtc-rtc
+    protocol: TCP
+    port: 6080
+  - name: udp-22000
+    protocol: UDP
+    port: 22000
+  - name: udp-22001
+    protocol: UDP
+    port: 22001
+  - name: udp-22002
+    protocol: UDP
+    port: 22002
+  - name: udp-22003
+    protocol: UDP
+    port: 22003
+  - name: udp-22004
+    protocol: UDP
+    port: 22004
+  - name: udp-22005
+    protocol: UDP
+    port: 22005
+  - name: udp-22006
+    protocol: UDP
+    port: 22006
+  - name: udp-22007
+    protocol: UDP
+    port: 22007
+  - name: udp-22008
+    protocol: UDP
+    port: 22008
+  selector:
+    app: ingress-nginx
+

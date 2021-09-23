@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: lzy-ingress
+  namespace: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:             #规则 
+  - host: ingress.liangzy.com   #域名
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: httpd-svc       #关联service
+          servicePort: 80              #关联service的映射端口
+      - path: /tomcat
+        backend:
+          serviceName: tomcat-svc      #关联service
+          servicePort: 8080                #关联service的映射端口
