@@ -50,5 +50,5 @@ spec:
       - path: /tomcat
         backend:
           serviceName: tomcat-svc      #关联service
-          servicePort: 8080                #关联service的映射端口
+          servicePort: 8080            #关联service的映射端口
 ```
